@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur de mot de passe</title>
+    <link rel="stylesheet" href="style.css">
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:xd_Signature msdt:dt="string"></mso:xd_Signature>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">Sylvain TROP�E</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
+<mso:Order msdt:dt="string">14770300.0000000</mso:Order>
+<mso:xd_ProgID msdt:dt="string"></mso:xd_ProgID>
+<mso:_ExtendedDescription msdt:dt="string"></mso:_ExtendedDescription>
+<mso:SharedWithUsers msdt:dt="string"></mso:SharedWithUsers>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">Sylvain TROP�E</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
+<mso:ComplianceAssetId msdt:dt="string"></mso:ComplianceAssetId>
+<mso:TemplateUrl msdt:dt="string"></mso:TemplateUrl>
+<mso:ContentTypeId msdt:dt="string">0x0101005FC9D40F83F33A419CB11199DC16CAA0</mso:ContentTypeId>
+<mso:TriggerFlowInfo msdt:dt="string"></mso:TriggerFlowInfo>
+<mso:_SourceUrl msdt:dt="string"></mso:_SourceUrl>
+<mso:_SharedFileIndex msdt:dt="string"></mso:_SharedFileIndex>
+<mso:MediaLengthInSeconds msdt:dt="string"></mso:MediaLengthInSeconds>
+<mso:TaxCatchAll msdt:dt="string"></mso:TaxCatchAll>
+<mso:MediaServiceImageTags msdt:dt="string"></mso:MediaServiceImageTags>
+<mso:lcf76f155ced4ddcb4097134ff3c332f msdt:dt="string"></mso:lcf76f155ced4ddcb4097134ff3c332f>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<body>
+    <header>
+        <h1>Générateur de mot de passe</h1>
+        <img src="assets/images/lock.png" alt="Image de cadenas">
+    </header>
+    <main>
+        
+        <fieldset>
+            <legend>Critères du mot de passe</legend>
+
+            <div>
+                <label for="nb">Nombre de caractères :</label>
+                <input type="number" name="nb" id="nb" min="0" max="50" value="1">
+            </div>
+            <div>
+                <input type="checkbox" name="min" id="min"><label for="min">Minuscules</label>
+            </div>
+            <div>
+                <input type="checkbox" name="maj" id="maj"><label for="maj">Majuscules</label>
+            </div>
+            <div>
+                <input type="checkbox" name="num" id="num"><label for="num">Caractères numériques</label>
+            </div>
+            <div>
+                <input type="checkbox" name="car" id="car"><label for="car">Caractères spéciaux</label>
+            </div>
+            
+        </fieldset>
+
+        <fieldset>
+            <legend>Indicateur de sécurité</legend>
+            <span id="indicateur">
+                <canvas id="canvas" width="500px" height="50px"></canvas>
+            </span>
+        </fieldset>
+
+        <button id="generation">Générer</button>
+
+        <section id="mdp">
+            Le mot de passe généré apparaitra ici...
+        </section>
+        <button id="copy"><img src="assets/images/copy.png" alt="Copier" title="Copier le code"> Copier le code</button>
+
+    </main>
+    <script src="canvas.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
